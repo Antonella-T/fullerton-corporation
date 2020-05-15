@@ -1,0 +1,306 @@
+/* GLOBAL styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    background-color: gray;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    border-bottom: 1px solid #4e4d4d;
+    padding-bottom: 5px;
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+
+
+/* HELPERS */
+.show-hidden {
+    color: #943749;
+    cursor: pointer;
+}
+
+.show-hidden:hover {
+    color: #e10c34;
+}
+
+
+
+/* HEADER styles */
+header {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 3%;
+}
+
+header .logo {
+    flex-basis: 70%;
+}
+
+header .logo img {
+    width: 230px;
+}
+
+header .fa-bars {
+    font-size: 2em;
+}
+
+header a,
+header .fa-bars {
+    color: white;
+}
+
+header .icons {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 10px;
+    flex-grow: 1;
+}
+
+header .icons p {
+    display: none;
+}
+
+header .icons a {
+    margin-right: 1%;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-basis: 30%;
+}
+
+header label {
+    cursor: pointer;
+    flex-basis: 100%;
+    flex-grow: 1;
+    text-align: end;
+    position: fixed;
+    z-index: 99;
+}
+
+header input {
+    display: none;
+    /* to hide the checkbox. */
+}
+
+header .menu {
+    display: none;
+    /* to hide the ul, I only need to see the icon. */
+}
+
+header .menu a {
+    font-size: 1.3em;
+}
+
+#toggle:checked+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex-grow: 1;
+    background-color: brown;
+    /* I need my menu in the same place (fixed) even if its scroll and needs to occupied the whole screen.*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+
+header li {
+    display: flex;
+    margin: auto;
+}
+
+header a:hover {
+    color: #ff9000;
+}
+
+
+
+/* SLIDE-SHOW styles */
+.slide-show {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    border-bottom: 2px solid #b5b5b5;
+    border-top: 2px solid #b5b5b5;
+}
+
+.slide-show > div {
+    position: absolute;
+}
+
+.banner-description {
+    background-color: #4e4d4d;
+    overflow: hidden;
+    color: white;
+    padding: 0 2%;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+
+
+/* MAIN styles */
+main section {
+    padding: 0 3%;
+}
+
+main section img {
+    padding: 5px;
+    border: 1px solid #cecece;
+    margin: 10px auto;
+}
+
+main section .center-image {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* ASIDE styles */
+aside {
+    padding: 3% 2% 0;
+}
+
+aside h2 {
+    color: #943749;
+    font-size: 1.5em;
+}
+
+
+
+/* FOOTER styles */
+footer {
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    font-size: .9em;
+    margin-top: 20px;
+}
+
+/* MEDIA QUERY styles*/
+@media screen and (min-width: 500px) {
+
+    main section .center-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main section img {
+        margin: 10px 2px;
+        width: 338px;
+    }
+
+    aside img {
+        float: left;
+        margin-right: 2%;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+
+    /* HEADER styles */
+    header {
+        padding: 0;
+    }
+
+    header .icons {
+        margin: 0;
+        display: block;
+    }
+
+    header .icons p {
+        display: block;
+        color: white;
+        margin-right: 3%;
+    }
+
+    header nav {
+        order: 2;
+        background-color: #4e4d4d;
+        justify-content: flex-start;
+        flex-grow: 1;
+    }
+
+    header label {
+        display: none;
+    }
+
+    header .menu {
+        display: flex;
+        padding-left: 2%;
+    }
+
+    header .menu a {
+        font-size: 1.2em;
+    }
+
+    header li {
+        margin-right: 4%;
+    }
+
+    /* MAIN styles */
+    main {
+        display: flex;
+    }
+
+    main section img {
+        margin: 0 20px 0 0;
+    }
+
+    main section .center-image {
+        justify-content: center;
+    }
+
+    main section img {
+        margin: 10px 8px;
+        width: 265px;
+    }
+
+    /* ASIDE styles */
+    aside {
+        flex-basis: 70%;
+    }
+
+    aside img {
+        float: none;
+    }
+
+}
